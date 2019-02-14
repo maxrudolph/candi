@@ -9,7 +9,7 @@ module list
 HOME=`echo ~`
 INSTALL_PREFIX=$HOME/dealii-toolchain
 # build hdf5, p4est, trilinos, dealii:
-./candi.sh --prefix=$INSTALL_PREFIX --packages="hdf5 p4est trilinos dealii" -j 32
+yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="hdf5 p4est trilinos dealii" -j 32
 # clean up:
 rm -rf /tmp/build
 rm -rf /tmp/src
