@@ -5,9 +5,11 @@
 #SBATCH --exclusive
 #SBATCH --job-name=candi
 set -x
-module list
+#module purge
+module load openmpi/4.0.1
+which mpicc
 HOME=`echo ~`
-INSTALL_PREFIX=$HOME/dealii-toolchain
+INSTALL_PREFIX=$HOME/sw/dealii-toolchain-openmpi-4.0.1-master
 # build hdf5, p4est, trilinos, dealii:
 yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="hdf5 p4est trilinos dealii" -j 32
 # clean up:
@@ -31,4 +33,3 @@ make -j 32
 cp aspect ${CANDI_DIR}/aspect/build/aspect.debug
 cd ${CANDI_DIR}
 rm -rf /tmp/build
-
