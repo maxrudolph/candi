@@ -7,7 +7,7 @@ PACKING=.tar.gz
 CHECKSUM=e115eeb66e944fa7814482415dd21cc4
 BUILDCHAIN=autotools
 
-CONFOPTS="--enable-shared --enable-parallel"
+CONFOPTS="--enable-shared --enable-parallel "
 
 INSTALL_PATH=${INSTALL_PATH}/${NAME}
 

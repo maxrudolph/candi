@@ -1,6 +1,6 @@
 #VERSION=1.1;CHECKSUM=37ba7f4410958cfb38a2140339dbf64f
-#VERSION=2.0;CHECKSUM=1b7440a78a28ebf713361acfea70ee78
-VERSION=2.2;CHECKSUM=6943949a6678589ebf1686ee7bad7ea1
+VERSION=2.0;CHECKSUM=1b7440a78a28ebf713361acfea70ee78
+#VERSION=2.2;CHECKSUM=6943949a6678589ebf1686ee7bad7ea1
 
 NAME=p4est-$VERSION
 EXTRACTSTO=p4est-${VERSION}
@@ -74,7 +74,7 @@ package_specific_setup () {
     echo "Build FAST version in $BUILD_FAST"
     mkdir -p "$BUILD_FAST"
     cd "$BUILD_FAST"
-    "${UNPACK_PATH}/${EXTRACTSTO}/configure" --enable-mpi --enable-shared --disable-mpiio\
+    "${UNPACK_PATH}/${EXTRACTSTO}/configure" --enable-mpi --enable-shared --disable-mpiio \
         --disable-vtk-binary --without-blas \
         --prefix="$INSTALL_FAST" CFLAGS="$CFLAGS_FAST" \
         CPPFLAGS="-DSC_LOG_PRIORITY=SC_LP_ESSENTIAL" F77="$FF" \
@@ -88,7 +88,7 @@ package_specific_setup () {
     echo "Build DEBUG version in $BUILD_DEBUG"
     mkdir -p "$BUILD_DEBUG"
     cd "$BUILD_DEBUG"
-    "${UNPACK_PATH}/${EXTRACTSTO}/configure" --enable-debug --enable-mpi --enable-shared --disable-mpiio\
+    "${UNPACK_PATH}/${EXTRACTSTO}/configure" --enable-debug --enable-mpi --enable-shared --disable-mpiio \
         --disable-vtk-binary --without-blas \
         --prefix="$INSTALL_DEBUG" CFLAGS="$CFLAGS_DEBUG" \
         CPPFLAGS="-DSC_LOG_PRIORITY=SC_LP_ESSENTIAL" F77="$FF" \
