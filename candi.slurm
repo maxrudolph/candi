@@ -18,9 +18,9 @@ INSTALL_PREFIX=$HOME/sw/dealii-toolchain-openmpi-4.0.2-hdf5
 # build hdf5, p4est, trilinos, dealii:
 yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="hdf5 p4est trilinos dealii" -j 32
 # clean up:
-rm -rf /tmp/build
-rm -rf /tmp/src
-rm -rf /tmp/unpack
+#rm -rf /tmp/build
+#rm -rf /tmp/src
+#rm -rf /tmp/unpack
 
 # compile aspect
 CANDI_DIR=`pwd`
@@ -37,4 +37,4 @@ make debug
 make -j 32
 cp aspect ${CANDI_DIR}/aspect/build/aspect.debug
 cd ${CANDI_DIR}
-rm -rf /tmp/build
+#rm -rf /tmp/build
