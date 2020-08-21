@@ -2,11 +2,17 @@
 VERSION=3.0.6
 CHECKSUM=78bbfdd695b29cfef18a99f93226afc5
 
+<<<<<<< HEAD
 
 #VERSION=2.16.0
 #CHECKSUM=762c10f159dab4b042e3140b1c348427
 
 
+=======
+#VERSION=2.16.0
+#CHECKSUM=762c10f159dab4b042e3140b1c348427
+
+>>>>>>> 1c48d7c... opencascade and gmsh: export CASROOT, fix libs
 NAME=gmsh-${VERSION}-source
 PACKING=.tgz
 SOURCE=http://gmsh.info/src/
@@ -32,9 +38,12 @@ CONFOPTS=" -D ENABLE_MPI=OFF \
 # -D ENABLE_FLTK=OFF
 # -D ENABLE_OCC=OFF
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 # -D ENABLE_PETSC=OFF
 >>>>>>> 5bd9078... fix gmsh
+=======
+>>>>>>> 1c48d7c... opencascade and gmsh: export CASROOT, fix libs
 # -D ENABLE_COMPRESSED_IO=O
 # the following two sadly don't install the .so correctly:
 # -D ENABLE_BUILD_SHARED=ON
