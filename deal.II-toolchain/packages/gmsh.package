@@ -31,6 +31,10 @@ CONFOPTS=" -D ENABLE_MPI=OFF \
 # -D ENABLE_METIS=OFF
 # -D ENABLE_FLTK=OFF
 # -D ENABLE_OCC=OFF
+<<<<<<< HEAD
+=======
+# -D ENABLE_PETSC=OFF
+>>>>>>> 5bd9078... fix gmsh
 # -D ENABLE_COMPRESSED_IO=O
 # the following two sadly don't install the .so correctly:
 # -D ENABLE_BUILD_SHARED=ON
