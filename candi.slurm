@@ -24,7 +24,7 @@ git clone https://github.com/geodynamics/aspect
 mkdir aspect/build
 mkdir /tmp/build
 cd /tmp/build
-cmake -DDEAL_II_DIR=${INSTALL_PREFIX}/deal.II-v9.0.1 ${CANDI_DIR}/aspect/
+cmake -DDEAL_II_DIR=${INSTALL_PREFIX}/deal.II-master ${CANDI_DIR}/aspect/
 make release
 make -j 32
 cp aspect ${CANDI_DIR}/aspect/build/aspect.fast
