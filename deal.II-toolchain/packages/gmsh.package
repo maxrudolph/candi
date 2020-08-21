@@ -2,8 +2,10 @@
 VERSION=3.0.6
 CHECKSUM=78bbfdd695b29cfef18a99f93226afc5
 
+
 #VERSION=2.16.0
 #CHECKSUM=762c10f159dab4b042e3140b1c348427
+
 
 NAME=gmsh-${VERSION}-source
 PACKING=.tgz
@@ -14,6 +16,7 @@ BUILDCHAIN=cmake
 
 BUILDDIR=${BUILD_PATH}/${EXTRACTSTO}
 INSTALL_PATH=${INSTALL_PATH}/gmsh-${VERSION}
+
 
 # Disable slepc because gmsh is not setting the relative path for the
 # .so correctly.
