@@ -15,10 +15,10 @@ module list
 which mpicc
 HOME=`echo ~`
 
-INSTALL_PREFIX=$HOME/sw/dealii-9.4-toolchain-openmpi-4.1.5-mpi-io
+INSTALL_PREFIX=$HOME/sw/dealii-9.5.1-toolchain-openmpi-4.1.5-mpi-io
 
 # build hdf5, p4est, trilinos, dealii:
-yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="openblas netcdf hdf5 p4est trilinos dealii" -j 32
+yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="openblas sundials hdf5 netcdf p4est trilinos dealii" -j 32
 # clean up:
 #rm -rf /tmp/build
 #rm -rf /tmp/src
@@ -31,7 +31,7 @@ git clone git@github.com:geodynamics/aspect.git
 mkdir aspect/build
 mkdir /tmp/build
 cd /tmp/build
-cmake -D DEAL_II_DIR=${INSTALL_PREFIX}/deal.II-v9.4.2/ ${CANDI_DIR}/aspect/
+cmake -D DEAL_II_DIR=${INSTALL_PREFIX}/deal.II-v9.5.1/ ${CANDI_DIR}/aspect/
 date
 time make debugrelease
 make -j 32
