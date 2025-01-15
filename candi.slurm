@@ -10,12 +10,23 @@
 #SBATCH --mail-user=maxrudolph@ucdavis.edu
 set -x
 #module purge
-
+#module load openmpi
+#module load gcc
 module list
 which mpicc
+which mpic++
+which mpif90
+
+# set compilers
+export CC=`which mpicc`
+export FC=`which mpif90`
+export CXX=`which mpic++`
+export FF=`which mpif77`
+export MPI_CXX=`which mpic++`
+
 HOME=`echo ~`
 
-INSTALL_PREFIX=$HOME/sw/dealii-9.5.1-toolchain-openmpi-4.1.5-mpi-io
+INSTALL_PREFIX=$HOME/sw/dealii-9.6.1-toolchain-openmpi-5.0.5
 
 # build hdf5, p4est, trilinos, dealii:
 yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="openblas sundials hdf5 netcdf p4est trilinos dealii" -j 32
@@ -31,7 +42,7 @@ git clone git@github.com:geodynamics/aspect.git
 mkdir aspect/build
 mkdir /tmp/build
 cd /tmp/build
-cmake -D DEAL_II_DIR=${INSTALL_PREFIX}/deal.II-v9.5.1/ ${CANDI_DIR}/aspect/
+cmake -D DEAL_II_DIR=${INSTALL_PREFIX}/deal.II-v9.6.1/ ${CANDI_DIR}/aspect/
 date
 time make debugrelease
 make -j 32
