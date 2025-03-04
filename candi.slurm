@@ -31,9 +31,9 @@ INSTALL_PREFIX=$HOME/sw/dealii-9.6.1-toolchain-openmpi-5.0.5
 # build hdf5, p4est, trilinos, dealii:
 yes | ./candi.sh --prefix=$INSTALL_PREFIX --packages="openblas sundials hdf5 netcdf p4est trilinos dealii" -j 32
 # clean up:
-#rm -rf /tmp/build
-#rm -rf /tmp/src
-#rm -rf /tmp/unpack
+rm -rf /tmp/build1
+rm -rf /tmp/src1
+rm -rf /tmp/unpack1
 
 # compile aspect
 CANDI_DIR=`pwd`
@@ -48,4 +48,4 @@ time make debugrelease
 make -j 32
 cp aspect ${CANDI_DIR}/aspect/build/aspect.fast
 date
-#rm -rf /tmp/build
+rm -rf /tmp/build
